@@ -1,0 +1,26 @@
+#ifndef COMM_ID_DEF_H_39873427982341213652314756
+#define COMM_ID_DEF_H_39873427982341213652314756
+
+#include "dsc/dsc_comm_def.h"
+
+#include "common/vbh_comm_id_def.h"
+
+namespace VBH_TEST
+{
+	enum
+	{
+		VBH_PERF_TEST_NODE_TYPE = 111,
+		VBH_TEST_STATIC_NODE_TYPE = 222,
+		VBH_PERF_TEST_STATIC_SERVICE_TYPE = VBH::EN_MIN_VBH_SERVICE_TYPE + 1,
+		VBH_PERF_TEST_SERVICE_TYPE,
+		VBH_REG_TEST_SERVICE_TYPE
+	};
+
+	enum
+	{
+		EN_SUM_MSG = DSC::EN_MIN_USER_MSG + 1,
+		EN_USER_INFO_MSG,
+	};
+}
+
+#endif

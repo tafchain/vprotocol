@@ -1,0 +1,102 @@
+/*
+ Navicat Premium Data Transfer
+
+ Source Server         : dsc
+ Source Server Type    : SQLite
+ Source Server Version : 3017000
+ Source Schema         : main
+
+ Target Server Type    : SQLite
+ Target Server Version : 3017000
+ File Encoding         : 65001
+
+ Date: 26/12/2018 13:30:40
+*/
+
+PRAGMA foreign_keys = false;
+
+-- ----------------------------
+-- Table structure for T_CONNECT
+-- ----------------------------
+DROP TABLE IF EXISTS "T_CONNECT";
+CREATE TABLE "T_CONNECT" (
+  "NODE_TYPE" INTEGER NOT NULL,
+  "NODE_ID" INTEGER NOT NULL,
+  "REMOTE_IP_ADDR" INTEGER NOT NULL,
+  "REMOTE_PORT" INTEGER NOT NULL,
+  "LOCAL_IP_ADDR" VARCHAR(32) NOT NULL,
+  "LOCAL_PORT" INTEGER NOT NULL,
+  CONSTRAINT "sqlite_autoindex_T_CONNECT_1" PRIMARY KEY ("NODE_TYPE", "NODE_ID", "REMOTE_IP_ADDR", "REMOTE_PORT")
+);
+
+-- ----------------------------
+-- Table structure for T_DSC_PARAM_CONFIG
+-- ----------------------------
+DROP TABLE IF EXISTS "T_DSC_PARAM_CONFIG";
+CREATE TABLE "T_DSC_PARAM_CONFIG" (
+  "CONFIG_NAME" VARCHAR(128) NOT NULL,
+  "CONFIG_VALUE" VARCHAR(256) NOT NULL,
+  "NODE_TYPE" INTEGER NOT NULL,
+  "NODE_ID" INTEGER NOT NULL,
+  CONSTRAINT "sqlite_autoindex_T_DSC_PARAM_CONFIG_1" PRIMARY KEY ("NODE_TYPE", "NODE_ID", "CONFIG_NAME")
+);
+
+-- ----------------------------
+-- Records of "T_DSC_PARAM_CONFIG"
+-- ----------------------------
+INSERT INTO "T_DSC_PARAM_CONFIG" VALUES ('DSC_SERVICE_CONTAINER_NUM', '16', 0, 0);
+INSERT INTO "T_DSC_PARAM_CONFIG" VALUES ('LOG_CREATE_LOG_PERIORD_SWITCH', '1', 0, 0);
+INSERT INTO "T_DSC_PARAM_CONFIG" VALUES ('LOG_CREATE_LOG_PERIORD', '1', 0, 0);
+INSERT INTO "T_DSC_PARAM_CONFIG" VALUES ('LOG_ARCHIVE_SWITCH', '0', 0, 0);
+INSERT INTO "T_DSC_PARAM_CONFIG" VALUES ('HEART_BEAT_INTERVAL', '10', 0, 0);
+INSERT INTO "T_DSC_PARAM_CONFIG" VALUES ('HEART_BEAT_TIMEOUT_COUNT', '10', 0, 0);
+
+-- ----------------------------
+-- Table structure for T_LISTEN
+-- ----------------------------
+DROP TABLE IF EXISTS "T_LISTEN";
+CREATE TABLE "T_LISTEN" (
+  "NODE_TYPE" INTEGER NOT NULL,
+  "NODE_ID" INTEGER NOT NULL,
+  "IP_ADDR" VARCHAR(32) NOT NULL,
+  "PORT" INTEGER NOT NULL,
+  CONSTRAINT "sqlite_autoindex_T_LISTEN_1" PRIMARY KEY ("NODE_TYPE", "NODE_ID")
+);
+
+-- ----------------------------
+-- Table structure for T_LOG_CONFIG
+-- ----------------------------
+DROP TABLE IF EXISTS "T_LOG_CONFIG";
+CREATE TABLE "T_LOG_CONFIG" (
+  "NODE_TYPE" INTEGER NOT NULL,
+  "NODE_ID" INTEGER NOT NULL,
+  "LOG_TYPE_NAME" VARCHAR(128) NOT NULL,
+  "MAX_FILE_SIZE" INTEGER NOT NULL,
+  "MAX_BACKUP_INDEX" INTEGER NOT NULL,
+  "BUFFER_SIZE" INTEGER NOT NULL,
+  "LOG_GRADE" INTEGER NOT NULL,
+  "BUFFERED_IO_GRADE" INTEGER NOT NULL
+);
+
+-- ----------------------------
+-- Records of "T_LOG_CONFIG"
+-- ----------------------------
+INSERT INTO "T_LOG_CONFIG" VALUES (0, 0, 'RUN', 10, 10, 1, 2, 2);
+INSERT INTO "T_LOG_CONFIG" VALUES (0, 0, 'INTERFACE', 10, 10, 1, 2, 2);
+INSERT INTO "T_LOG_CONFIG" VALUES (0, 0, 'STATISTIC', 10, 10, 1, 2, 2);
+
+-- ----------------------------
+-- Table structure for T_PLUGIN
+-- ----------------------------
+DROP TABLE IF EXISTS "T_PLUGIN";
+CREATE TABLE "T_PLUGIN" (
+  "NODE_TYPE" INTEGER NOT NULL,
+  "NODE_ID" INTEGER NOT NULL,
+  "PLUGIN_NAME" VARCHAR(128) NOT NULL,
+  "PRI" INTEGER NOT NULL DEFAULT 0,
+  "REMARK" VARCHAR(128),
+  "INUSE" INTEGER NOT NULL DEFAULT 0,
+  CONSTRAINT "sqlite_autoindex_T_PLUGIN_1" PRIMARY KEY ("NODE_TYPE", "NODE_ID", "PLUGIN_NAME")
+);
+
+PRAGMA foreign_keys = true;

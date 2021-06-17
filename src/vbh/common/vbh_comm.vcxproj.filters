@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="vbh_committer_router.cpp" />
+    <ClCompile Include="vbh_comm_error_code.cpp" />
+    <ClCompile Include="vbh_comm_func.cpp" />
+    <ClCompile Include="vbh_comm_msg_def.cpp" />
+    <ClCompile Include="vbh_comm_wrap_msg_def.cpp" />
+    <ClCompile Include="merkel_tree\merkel_tree.cpp">
+      <Filter>merkel_tree</Filter>
+    </ClCompile>
+    <ClCompile Include="vbh_encrypt_lib.cpp" />
+    <ClCompile Include="vbh_block_msg_def.cpp" />
+    <ClCompile Include="vbh_block_cache_manager.cpp" />
+    <ClCompile Include="crypt_key_codec.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="vbh_committer_router.h" />
+    <ClInclude Include="vbh_comm_def_export.h" />
+    <ClInclude Include="vbh_comm_error_code.h" />
+    <ClInclude Include="vbh_comm_func.h" />
+    <ClInclude Include="vbh_comm_id_def.h" />
+    <ClInclude Include="vbh_comm_id_name_rule.h" />
+    <ClInclude Include="vbh_comm_macro_def.h" />
+    <ClInclude Include="vbh_comm_msg_def.h" />
+    <ClInclude Include="vbh_comm_wrap_msg_def.h" />
+    <ClInclude Include="merkel_tree\merkel_tree.h">
+      <Filter>merkel_tree</Filter>
+    </ClInclude>
+    <ClInclude Include="vbh_encrypt_lib.h" />
+    <ClInclude Include="vbh_block_msg_def.h" />
+    <ClInclude Include="vbh_block_cache_manager.h" />
+    <ClInclude Include="crypt_key_codec.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="vbh_committer_router.inl" />
+    <None Include="vbh_comm_func.inl" />
+    <None Include="vbh_comm_msg_def.inl" />
+    <None Include="merkel_tree\merkel_tree.inl">
+      <Filter>merkel_tree</Filter>
+    </None>
+    <None Include="vbh_encrypt_lib.inl" />
+    <None Include="vbh_block_msg_def.inl" />
+    <None Include="vbh_block_cache_manager.inl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="merkel_tree">
+      <UniqueIdentifier>{8f0688e1-4e8e-4555-8f19-2cefe691335d}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

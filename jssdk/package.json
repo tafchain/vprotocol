@@ -1,0 +1,24 @@
+{
+  "name": "jst",
+  "version": "1.0.0",
+  "description": "1. 安装node npm省略\r 2. 安装python2.7\r <br>管理员运行bash/cmd/powershell，否则会提示权限不足\r 3. npm install  --global --production windows-build-tools\r 4. npm install -g node-gyp\r 5. npm install ffi\r 6. npm install ref\r 7. npm install ref-array\r 8. npm install ref-struct\r 9. npm install socket.io\r 10.  npm install validator",
+  "main": "bcsdktest.js",
+  "dependencies": {
+    "ffi": "^2.3.0",
+    "socket.io": "^2.2.0",
+    "node-addon-api": "^1.6.3",
+    "ref": "^1.3.5",
+    "validator": "^10.11.0",
+    "ref-array": "^1.2.0",
+    "ref-struct": "^1.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "install": "node-gyp rebuild"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "gypfile": true
+}

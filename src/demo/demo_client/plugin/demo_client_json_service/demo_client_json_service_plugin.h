@@ -1,0 +1,11 @@
+#ifndef DEMO_CLIENT_JSON_PLUG_IN_H_2348902437893426734798234978423674236743267
+#define DEMO_CLIENT_JSON_PLUG_IN_H_2348902437893426734798234978423674236743267
+
+#include "dsc/plugin/i_dsc_plugin.h"
+
+class CDemoClientJsonPlugIn : public IDscPlugin
+{ 
+public: 
+	ACE_INT32 OnInit(void); 
+}; 
+#endif

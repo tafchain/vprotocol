@@ -1,0 +1,50 @@
+﻿指令: register
+参数: {
+          "channelID": 111,
+          "userKey":"key",
+          "userInfo":"ppppppppppppp"
+        }
+
+
+指令: unregister
+参数: {
+          "channelID": 111,
+          "userKey":"key"
+        }
+
+
+指令: query
+参数: {
+          "channelID": 111,
+          "userKey":"key",
+          "cryptUserKey": "11111111111111"
+        }
+
+指令: update
+参数: {
+          "channelID": 111,
+          "userKey":"key",
+          "cryptUserKey": "11111111111111",
+          "userInfo":"yyyyyyyyyyyyyyyyyyy"
+         }
+
+指令: trans_query
+参数: {
+              "userKey":"key",
+              "cryptUserKey":"11111"
+ }
+
+指令: trans_transfer
+参数: {
+          "fromUserKey":"from",
+          "toUserKey":"to",
+          "asset":100,
+          "cryptUserKey":"12312313123"
+        }
+
+指令: trans_issue
+参数: {
+              "toUser":"usera",
+              "asset":100,
+              "cryptUserKey":"12312313123"
+        }

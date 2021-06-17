@@ -1,0 +1,83 @@
+<!--<!DOCTYPE html>-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>永旗区块链</title>
+    <script type="text/javascript" src="http://192.168.0.27:8080/socket.io/socket.io.js"></script>
+</head>
+<body>
+<script>
+  var socket = io.connect('http://192.168.0.27:8080');
+  function reg_onclick(){
+    socket.emit('register', { data: document.getElementById('id_input').value });
+    socket.on('result', function (data) {
+    //alert(data.data);
+    document.getElementById('id_output').value = data.data;
+    //alert(data.data.toJSON());
+    })
+  }
+  function unreg_onclick(){
+      socket.emit('unregister', { data: document.getElementById('id_input').value });
+      socket.on('result', function (data) {
+          //alert(data.data);
+          document.getElementById('id_output').value = data.data;
+          //alert(data.data.toJSON());
+      })
+  }
+  function query_onclick(){
+      socket.emit('query', { data: document.getElementById('id_input').value });
+      socket.on('result', function (data) {
+          //alert(data.data);
+          document.getElementById('id_output').value = data.data;
+          //alert(data.data.toJSON());
+      })
+  }
+  function update_onclick(){
+      socket.emit('update', { data: document.getElementById('id_input').value });
+      socket.on('result', function (data) {
+          //alert(data.data);
+          document.getElementById('id_output').value = data.data;
+          //alert(data.data.toJSON());
+      })
+  }
+  function trans_query_onclick(){
+      socket.emit('trans_query', { data: document.getElementById('id_input').value });
+      socket.on('result', function (data) {
+          document.getElementById('id_output').value = data.data;
+      })
+  }
+  function trans_transfer_onclick(){
+      socket.emit('trans_transfer', { data: document.getElementById('id_input').value });
+      socket.on('result', function (data) {
+          document.getElementById('id_output').value = data.data;
+      })
+  }
+  function trans_issue_onclick(){
+    socket.emit('trans_issue', { data: document.getElementById('id_input').value });
+    socket.on('result', function (data) {
+      document.getElementById('id_output').value = data.data;
+    })
+  }
+</script>
+<div style="display: block; margin: 0 auto; width: 50%;">
+  <label>参 数:</label>
+  <br>
+  <textarea name="input" id="id_input" value="" style="width:800px; height:300px;"></textarea>
+  <br>
+  <br>
+  <button type="submit" name="" id="id_btn_reg" value="注册"  onclick="javascript:reg_onclick();" >注册</button>
+  <button type="submit" name="" id="id_btn_unreg" value="注销" onclick="javascript:unreg_onclick();" >注销</button>
+  <button type="submit" name="" id="id_btn_query" value="查询" onclick="javascript:query_onclick();" >查询</button>
+  <button type="submit" name="" id="id_btn_update" value="修改" onclick="javascript:update_onclick();" >修改</button>
+  <button type="submit" name="" id="id_btn_issue" value="空投" onclick="javascript:trans_issue_onclick();" >空投</button>
+  <button type="submit" name="" id="id_btn_transfer" value="转账" onclick="javascript:trans_transfer_onclick();" >转账</button>
+  <button type="submit" name="" id="id_btn_trans_query" value="余额" onclick="javascript:trans_query_onclick();" >余额</button>
+  <br>
+  <br>
+  <label>结 果:</label>
+  <br>
+  <textarea name="input" id="id_output" value="" style="width:800px; height:300px;"></textarea>
+  <br>
+</div>
+  </body>
+</html>

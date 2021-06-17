@@ -1,0 +1,43 @@
+#include "dsc/dsc_comm_def.h"
+
+#include "common/vbh_comm_error_code.h"
+
+const char* VBH::GetErrorString(int nErrorCode)
+{
+	static const char* pErrorString[] = { 
+		"OK", //0
+		"EN_NOT_READY_ERROR_TYPE", //-1
+		"EN_REENTRY_ERROR_TYPE", //-2
+		"EN_TIMEOUT_ERROR_TYPE", //-3
+		"EN_NETWORK_ERROR_TYPE", //-4
+		"EN_SYSTEM_ERROR_TYPE", //-5
+		"EN_ENCRYPT_ERROR_TYPE", //-6
+		"EN_DECRYPT_ERROR_TYPE", //-7
+		"EN_DECODE_ERROR_TYPE", //-8
+		"EN_SIGNATURE_VERIFY_ERROR_TYPE", //-9
+		"EN_NONCE_VERIFY_ERROR_TYPE", //-10
+		"EN_REPEAT_USER_ERROR_TYPE", //-11
+		"EN_CANNOT_FOUND_CHANNEL_ERROR_TYPE", //-12,
+		"EN_CANNOT_FOUND_USER_ERROR_TYPE", //-13,
+		"EN_ORDER_CPS_BLOCK_CACHE_ALREADY_FULL", //-14,
+		"EN_UPDATE_USER_CONFLICT_ERROR_TYPE", //-15
+		"EN_CANNOT_FOUND_TRANSACTION_ERROR_TYPE", //-16
+		"EN_CANNOT_FIND_SESSION_ERROR_TYPE",//-17
+		"EN_CLIENT_CANCEL_REGIST_ERROR_TYPE",//-18
+		"EN_CC_REPORT_ERROR_TYPE", //-19
+		"EN_REGIST_USER_IS_REFUSED", //-20
+		"EN_DISTRIBUTE_REPEATED_BLOCK_ID", //-21
+		"EN_CANNOT_FOUND_INFORMATION_ERROR_TYPE", //-22
+		"EN_CANNOT_FOUND_CHANNEL_INFORMATION_GROUP_ERROR_TYPE", //-23
+	};
+
+	DSC_ABS(nErrorCode);
+	if (nErrorCode < sizeof(pErrorString) / sizeof(char*))
+	{
+		return pErrorString[nErrorCode];
+	}
+	else
+	{
+		return NULL;
+	}
+}
